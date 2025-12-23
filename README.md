@@ -1,2 +1,23 @@
-# Portfolio-IA
-Personal Data Analyst portfolio. Interactive website featuring Dark Mode and Particle Network animation (HTML/CSS/JS).
+# 📊 Portfolio - Maksen Benkerrou
+
+Bienvenue sur le code source de mon portfolio personnel.
+Ce site vitrine a pour but de présenter mon parcours d'étudiant en **Data & IA**, mes compétences techniques et mes projets réalisés.
+
+## 🚀 Fonctionnalités
+* **Design Responsive :** Adapté aux ordinateurs, tablettes et mobiles.
+* **Thème Dynamique :** Bouton de bascule Dark Mode / Light Mode avec persistance des couleurs.
+* **Fond Animé :** Animation "Particle Network" réalisée en JavaScript pur (Canvas API) pour illustrer le thème de la Data.
+* **Interactivité :** Fenêtres modales (pop-ups) pour afficher les détails des projets sans recharger la page.
+
+## 🛠️ Stack Technique
+Ce projet a été conçu sans framework lourd pour garantir rapidité et légèreté :
+* **HTML5** : Structure sémantique.
+* **CSS3** : Variables CSS (custom properties), Flexbox, CSS Grid, Backdrop-filter.
+* **JavaScript (Vanilla)** : Logique du mode sombre, animation canvas et gestion des modales.
+
+## 📂 Structure du projet
+* `index.html` : Contient toute la structure, le style et les scripts.
+* `images/` : Dossier contenant les captures d'écran des projets (Analyses, Dashboards...).
+
+---
+*Projet réalisé dans le cadre de ma recherche d'alternance pour 2026.*
