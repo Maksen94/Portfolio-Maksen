@@ -250,7 +250,7 @@
     <section id="about">
     <h2 class="section-title">À propos</h2>
     <div class="about-container">
-        <img src="photo.png" alt="Maksen Benkerrou" class="profile-photo">
+        <img src="images/photo.png" alt="Maksen Benkerrou" class="profile-photo">
         
         <div class="card">
             <p style="font-size: 1.05rem;">
@@ -289,12 +289,15 @@
             <h3>Baccalauréat STMG</h3>
             <p>Lycée Pauline Rolland</p>
         </div>
-    </div> </section> <section id="certifications">
+    </div> 
+</section> 
+    
+    <section id="certifications">
     <h2 class="section-title">Certifications</h2>
     <div class="cards-grid">
         <div class="card" 
              style="cursor: pointer;" 
-             onclick="openModal('Ask Questions to Make Data-Driven Decisions', 'Certificat obtenu le 26 Déc 2025.<br>Émis par Google via Coursera.<br><a href=\'https://coursera.org/verify/2EBV25MJ8DL4\' target=\'_blank\' style=\'color:var(--accent-color); text-decoration:underline;\'>Vérifier l\'authenticité (ID: 2EBV25MJ8DL4)</a>', 'certification-google-2.png')">
+             onclick="openModal('Ask Questions to Make Data-Driven Decisions', 'Certificat obtenu le 26 Déc 2025.<br>Émis par Google via Coursera.<br><a href=\'https://coursera.org/verify/2EBV25MJ8DL4\' target=\'_blank\' style=\'color:var(--accent-color); text-decoration:underline;\'>Vérifier l\'authenticité (ID: 2EBV25MJ8DL4)</a>', 'certifications/certification-google-2.png')">
             <span>Décembre 2025</span>
             <h3>Ask Questions to Make Data-Driven Decisions</h3>
             <p>Google Career Certificates - Coursera (Cliquez pour voir)</p>
@@ -302,12 +305,13 @@
 
         <div class="card" 
              style="cursor: pointer;" 
-             onclick="openModal('Foundations: Data, Data, Everywhere', 'Certificat obtenu le 26 Nov 2025.<br>Émis par Google via Coursera.<br><a href=\'https://coursera.org/verify/4CVIFG95S0FR\' target=\'_blank\' style=\'color:var(--accent-color); text-decoration:underline;\'>Vérifier l\'authenticité (ID: 4CVIFG95S0FR)</a>', 'certification-google.png')">
+             onclick="openModal('Foundations: Data, Data, Everywhere', 'Certificat obtenu le 26 Nov 2025.<br>Émis par Google via Coursera.<br><a href=\'https://coursera.org/verify/4CVIFG95S0FR\' target=\'_blank\' style=\'color:var(--accent-color); text-decoration:underline;\'>Vérifier l\'authenticité (ID: 4CVIFG95S0FR)</a>', 'certifications/certification-google.png')">
             <span>Novembre 2025</span>
             <h3>Foundations: Data, Data, Everywhere</h3>
             <p>Google Career Certificates - Coursera (Cliquez pour voir)</p>
         </div>
-    </div> </section> ```
+    </div> 
+</section>`
 
 
     <section id="experience" style="margin-top: 40px;">
@@ -360,7 +364,7 @@
         <div class="project-grid">
             
             <div class="project-item" onclick="openModal('Analyse des Ventes Retail', 'Analyse approfondie de la performance commerciale d\'une chaîne de magasins.<br><br><b>Points clés :</b><br>• Visualisation du CA par catégorie.<br>• Analyse de la saisonnalité des ventes.<br>• Dashboard interactif pour les décideurs.<br><br><a href=\'https://github.com/Maksen94/Analyse-descriptive-des-sympt-mes-et-diagnostics-COVID-19\' target=\'_blank\' style=\'color: var(--accent-color); font-weight: bold; text-decoration: underline;\'>Voir le code sur GitHub</a>')">
-    <img src="data-analyse.png" alt="Analyse de données">
+    <img src="images/data-analyse.png" alt="Analyse de données">
     <div class="project-overlay">
         <h3>Analyse Ventes Retail</h3>
         <p>Voir les détails</p>
@@ -368,15 +372,23 @@
 </div>
 
             <div class="project-item" onclick="openModal('Site E-commerce (Projet IA)', 'Conception complète d\'un site e-commerce fictif pour maîtriser le workflow des outils d\'Intelligence Artificielle générative. Stack : Manus IA, Reve.com, Gemini.')">
-                <img src="site-e-commerce.png" alt="Site E-commerce IA">
+                <img src="images/site-e-commerce.png" alt="Site E-commerce NO-CODE">
                 <div class="project-overlay">
-                    <h3>Site E-commerce IA</h3>
+                    <h3>Site E-commerce NO-CODE</h3>
                     <p>Voir les détails</p>
                 </div>
             </div>
 
+            <div class="project-item" onclick="openModal('Business Case : Lamborghini Viking Park', 'Étude de cas stratégique sur l\'extension de la marque Lamborghini dans le divertissement ultra-luxe en Chine.<br><br><b>Compétences Business & Stratégie :</b><br>• Analyse du macro/micro-environnement pour valider le potentiel du marché.<br>• Définition d\'une stratégie de Pricing (écrémage) et de distribution sélective.<br>• Conception d\'une gamme de 5 produits avec logique de rentabilité.<br><br><i>Ce projet démontre ma capacité à lier compréhension du marché et stratégie d\'entreprise.</i><br><br><a href=\'docs/Dossier_Lamborghini.pdf\' target=\'_blank\' style=\'color: var(--accent-color); font-weight: bold; text-decoration: underline; display: inline-flex; align-items: center; gap: 5px;\'>📄 Consulter l\'étude de cas (PDF)</a>')">
+    <img src="images/image_parc.png" alt="Business Case Lamborghini">
+    <div class="project-overlay">
+        <h3>Lamborghini Viking Park</h3>
+        <p>Stratégie & Business</p>
+    </div>
+</div>
+
             <div class="project-item" onclick="openModal('Score Éditorial Anime', 'Analyse d\'un catalogue d\'animés pour optimiser la mise en avant éditoriale.<br><br><b>Points clés :</b><br>• Création d\'un score composite (70% Note / 30% Régularité).<br>• Nettoyage de données avec Pandas.<br>• Visualisation des segments (Chefs-d\'œuvre, Valeurs Sûres).<br><br><a href=\'https://github.com/Maksen94/projet_animes\' target=\'_blank\' style=\'color: var(--accent-color);\'>Voir le code sur GitHub</a>')">
-    <img src="graphique.png" alt="Score Éditorial Anime">
+    <img src="images/graphique.png" alt="Score Éditorial Anime">
     <div class="project-overlay">
         <h3>Score Éditorial Anime</h3>
         <p>Voir les détails</p>
