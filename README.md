@@ -15,9 +15,6 @@ Ce projet a été conçu sans framework lourd pour garantir rapidité et légèr
 * **CSS3** : Variables CSS (custom properties), Flexbox, CSS Grid, Backdrop-filter.
 * **JavaScript (Vanilla)** : Logique du mode sombre, animation canvas et gestion des modales.
 
-## 📂 Structure du projet
-* `index.html` : Contient toute la structure, le style et les scripts.
-* `images/` : Dossier contenant les captures d'écran des projets (Analyses, Dashboards...).
 
 ---
 *Projet réalisé dans le cadre de ma recherche d'alternance pour 2026.*
