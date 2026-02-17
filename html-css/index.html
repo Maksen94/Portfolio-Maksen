@@ -146,6 +146,13 @@
             position: relative; cursor: pointer; border-radius: 16px; overflow: hidden; height: 250px; background-color: #333;
             border: 1px solid var(--border-color);
         }
+
+        /* --- AJUSTEMENT POUR LES LIENS DE PROJETS --- */
+.project-item {
+    display: block;        /* Permet à toute la zone de l'image d'être cliquable */
+    text-decoration: none; /* Supprime le soulignement automatique des liens */
+    color: inherit;        /* Empêche le texte de devenir bleu */
+}
         .project-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .project-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -250,7 +257,7 @@
     <section id="about">
     <h2 class="section-title">À propos</h2>
     <div class="about-container">
-        <img src="images/photo.png" alt="Maksen Benkerrou" class="profile-photo">
+        <img src="../images/photo.png" alt="Maksen Benkerrou" class="profile-photo">
         
         <div class="card">
             <p style="font-size: 1.05rem;">
@@ -363,37 +370,37 @@
         <h2 class="section-title">Projets Récents</h2>
         <div class="project-grid">
             
-            <div class="project-item" onclick="openModal('Analyse des symptômes COVID-19', 'Analyse approfondie des données cliniques démontrant les corrélations entre profils démographiques et diagnostics.<br><br><b>Points clés :</b><br>• Identification de la tranche d\'âge 31-85 ans comme facteur de risque constant (65% à 70% des cas). <br>• Analyse de la disparité géographique de la symptomatologie (toux, fièvre) entre différentes métropoles. <br>• Nettoyage et normalisation de données brutes via Google Sheets (fonctions NB.SI.ENS). <br><br><a href=\'https://github.com/Maksen94/Analyse-descriptive-des-sympt-mes-et-diagnostics-COVID-19\' target=\'_blank\' style=\'color: var(--accent-color); font-weight: bold; text-decoration: underline;\'>Voir le code sur GitHub</a>')">
-    <img src="images/data-analyse.png" alt="Analyse des symptômes COVID-19">
+            <a href="projet-covid.html" class="project-item">
+    <img src="../images/data-analyse.png" alt="Analyse des symptômes COVID-19">
     <div class="project-overlay">
         <h3>Analyse COVID-19</h3>
-        <p>Voir les détails</p>
+        <p>Découvrir l'étude de cas →</p>
     </div>
-</div>
+</a>
 
-            <div class="project-item" onclick="openModal('Site E-commerce (Projet IA)', 'Conception complète d\'un site e-commerce fictif pour maîtriser le workflow des outils d\'Intelligence Artificielle générative. Stack : Manus IA, Reve.com, Gemini.')">
-                <img src="images/site-e-commerce.png" alt="Site E-commerce NO-CODE">
-                <div class="project-overlay">
-                    <h3>Site E-commerce NO-CODE</h3>
-                    <p>Voir les détails</p>
-                </div>
-            </div>
+<a href="projet-ecommerce.html" class="project-item">
+    <img src="../images/site-e-commerce.png" alt="Site E-commerce NO-CODE">
+    <div class="project-overlay">
+        <h3>Site E-commerce NO-CODE</h3>
+        <p>Découvrir l'étude de cas →</p>
+    </div>
+</a>
 
-            <div class="project-item" onclick="openModal('Business Case : Lamborghini Viking Park', 'Étude de cas stratégique sur l\'extension de la marque Lamborghini dans le divertissement ultra-luxe en Chine.<br><br><b>Compétences Business & Stratégie :</b><br>• Analyse du macro/micro-environnement pour valider le potentiel du marché.<br>• Définition d\'une stratégie de Pricing (écrémage) et de distribution sélective.<br>• Conception d\'une gamme de 5 produits avec logique de rentabilité.<br><br><i>Ce projet démontre ma capacité à lier compréhension du marché et stratégie d\'entreprise.</i><br><br><a href=\'docs/Dossier_Lamborghini.pdf\' target=\'_blank\' style=\'color: var(--accent-color); font-weight: bold; text-decoration: underline; display: inline-flex; align-items: center; gap: 5px;\'>📄 Consulter l\'étude de cas (PDF)</a>')">
-    <img src="images/image_parc.png" alt="Business Case Lamborghini">
+            <a href="projet-lamborghini.html" class="project-item">
+    <img src="../images/image_parc.png" alt="Business Case Lamborghini">
     <div class="project-overlay">
         <h3>Lamborghini Viking Park</h3>
         <p>Stratégie & Business</p>
     </div>
-</div>
+</a>
 
-            <div class="project-item" onclick="openModal('Score Éditorial Anime', 'Analyse d\'un catalogue d\'animés pour optimiser la mise en avant éditoriale.<br><br><b>Points clés :</b><br>• Création d\'un score composite (70% Note / 30% Régularité).<br>• Nettoyage de données avec Pandas.<br>• Visualisation des segments (Chefs-d\'œuvre, Valeurs Sûres).<br><br><a href=\'https://github.com/Maksen94/projet_animes\' target=\'_blank\' style=\'color: var(--accent-color);\'>Voir le code sur GitHub</a>')">
-    <img src="images/graphique.png" alt="Score Éditorial Anime">
+            <a href="projet-anime.html" class="project-item">
+    <img src="../images/graphique.png" alt="Score Éditorial Anime">
     <div class="project-overlay">
         <h3>Score Éditorial Anime</h3>
         <p>Voir les détails</p>
     </div>
-</div>
+</a>
 
         </div>
     </section>
@@ -426,144 +433,129 @@
     </footer>
 
     <script>
-        // --- 1. GESTION DU DARK / LIGHT MODE & COULEURS ANIMATION ---
-        const themeBtn = document.getElementById('theme-btn');
-        const htmlElement = document.documentElement;
+    // --- 1. GESTION DU THÈME (CORRIGÉ & SYNCHRONISÉ) ---
+    const themeBtn = document.getElementById('theme-btn');
+    const htmlElement = document.documentElement;
+    
+    // Charger le thème au démarrage
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
+
+    function getParticleColor() {
+        return getComputedStyle(htmlElement).getPropertyValue('--particle-color').trim();
+    }
+    let particlesColor = getParticleColor();
+
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        // Fonction pour récupérer la couleur des particules selon le thème actuel
-        function getParticleColor() {
-            return getComputedStyle(htmlElement).getPropertyValue('--particle-color').trim();
-        }
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme); // Sauvegarde pour les pages projets
+        
+        setTimeout(() => {
+            particlesColor = getParticleColor();
+        }, 100);
+    });
 
-        let particlesColor = getParticleColor(); // Couleur initiale
+    // --- 2. ANIMATION D'ARRIÈRE-PLAN ---
+    const canvas = document.getElementById('bg-animation');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    let particlesArray;
 
-        themeBtn.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlElement.setAttribute('data-theme', newTheme);
-            
-            // Mise à jour de la couleur de l'animation après le changement de thème
-            setTimeout(() => {
-                particlesColor = getParticleColor();
-            }, 100); // Petit délai pour laisser le CSS se mettre à jour
-        });
-
-
-        // --- 2. ANIMATION D'ARRIÈRE-PLAN (Réseau de particules) ---
-        const canvas = document.getElementById('bg-animation');
-        const ctx = canvas.getContext('2d');
+    window.addEventListener('resize', function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        init();
+    });
 
-        let particlesArray;
-
-        // Gestion du redimensionnement de la fenêtre
-        window.addEventListener('resize', function() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
-        });
-
-        // Classe Particule
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1; // Taille entre 1 et 3px
-                this.speedX = Math.random() * 1 - 0.5; // Vitesse lente
-                this.speedY = Math.random() * 1 - 0.5;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                // Rebondir sur les bords
-                if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-                if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-            }
-            draw() {
-                ctx.fillStyle = particlesColor;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 2 + 1;
+            this.speedX = Math.random() * 1 - 0.5;
+            this.speedY = Math.random() * 1 - 0.5;
         }
-
-        // Initialisation des particules
-        function init() {
-            particlesArray = [];
-            let numberOfParticles = (canvas.height * canvas.width) / 15000; // Densité adaptative
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Particle());
-            }
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+            if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
         }
+        draw() {
+            ctx.fillStyle = particlesColor;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
 
-        // Dessiner les lignes entre les particules proches
-        function connect() {
-            let opacityValue = 1;
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a; b < particlesArray.length; b++) {
-                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
-                                 + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    if (distance < (canvas.width/7) * (canvas.height/7)) {
-                        opacityValue = 1 - (distance / 20000);
-                        // On utilise la même couleur que les particules mais avec une opacité variable
-                        let rgb = particlesColor.match(/\d+/g);
-                        if(rgb) {
-                             ctx.strokeStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacityValue})`;
-                        } else {
-                             ctx.strokeStyle = particlesColor; // Fallback si la regex échoue
-                        }
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
+    function init() {
+        particlesArray = [];
+        let numberOfParticles = (canvas.height * canvas.width) / 15000;
+        for (let i = 0; i < numberOfParticles; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+
+    function connect() {
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                             + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                if (distance < (canvas.width/7) * (canvas.height/7)) {
+                    let opacityValue = 1 - (distance / 20000);
+                    let rgb = particlesColor.match(/\d+/g);
+                    if(rgb) {
+                         ctx.strokeStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacityValue})`;
+                    } else {
+                         ctx.strokeStyle = particlesColor;
                     }
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
                 }
             }
         }
+    }
 
-        // Boucle d'animation
-        function animate() {
-            requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            connect();
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
         }
+        connect();
+    }
 
-        init();
-        animate();
+    init();
+    animate();
 
+    // --- 3. MODALE ---
+    const modal = document.getElementById("projectModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalImg = document.getElementById("modalImg");
 
-        // --- 3. GESTION DE LA MODALE PROJET (Inchangé) ---
-        const modal = document.getElementById("projectModal");
-        const modalTitle = document.getElementById("modalTitle");
-        const modalDesc = document.getElementById("modalDesc");
-
-       // Récupération de l'élément image
-        const modalImg = document.getElementById("modalImg");
-
-        // Nouvelle fonction qui accepte une image optionnelle
-        function openModal(title, description, imageSrc = null) {
-            modal.style.display = "flex";
-            modalTitle.innerText = title;
-            // On utilise innerHTML pour permettre les liens cliquables dans la description
-            modalDesc.innerHTML = description; 
-
-            if (imageSrc) {
-                // Si une image est fournie (cas des certifications), on l'affiche
-                modalImg.src = imageSrc;
-                modalImg.style.display = "block";
-            } else {
-                // Sinon (cas des projets où on a juste du texte), on la cache
-                modalImg.style.display = "none";
-            }
+    function openModal(title, description, imageSrc = null) {
+        modal.style.display = "flex";
+        modalTitle.innerText = title;
+        modalDesc.innerHTML = description; 
+        if (imageSrc) {
+            modalImg.src = imageSrc;
+            modalImg.style.display = "block";
+        } else {
+            modalImg.style.display = "none";
         }
-        function closeModal() { modal.style.display = "none"; }
-        window.onclick = function(event) { if (event.target == modal) closeModal(); }
-    </script>
+    }
+    function closeModal() { modal.style.display = "none"; }
+    window.onclick = function(event) { if (event.target == modal) closeModal(); }
+</script>
 </body>
 </html>
