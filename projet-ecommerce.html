@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet E-commerce IA - Maksen Benkerrou</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+    /* --- VARIABLES DE COULEURS --- */
+    :root {
+        --bg-color: #f8fafc;
+        --nav-bg: rgba(248, 250, 252, 0.8);
+        --card-bg: rgba(255, 255, 255, 0.8);
+        --text-color: #1e293b;
+        --accent-color: #059669;
+        --border-color: #e2e8f0;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #0f172a;
+        --nav-bg: rgba(15, 23, 42, 0.8);
+        --card-bg: rgba(30, 41, 59, 0.7);
+        --text-color: #e2e8f0;
+        --accent-color: #34d399;
+        --border-color: #334155;
+    }
+
+    /* --- BASE --- */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.7;
+        margin: 0;
+        padding-top: 100px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* --- NAVIGATION --- */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        box-sizing: border-box;
+        transition: background 0.3s ease;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #theme-btn {
+        background: none;
+        border: 1px solid var(--border-color);
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        color: var(--text-color);
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    #theme-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+    .nav-right a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .nav-right a:hover { color: var(--accent-color); }
+
+    /* --- CONTENU --- */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 5% 5rem; }
+    .back-link { color: var(--accent-color); text-decoration: none; font-weight: 600; display: inline-block; margin-bottom: 2rem; }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+    .subtitle { color: var(--accent-color); font-family: monospace; font-size: 1.2rem; margin-bottom: 2rem; }
+    .main-img { width: 100%; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 3rem; }
+    .detail-card { background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 2rem; }
+    .detail-card h2 { margin-top: 0; font-size: 1.4rem; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+    .cta-github, .cta-pdf { display: inline-block; background-color: var(--accent-color); color: #0f172a; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none; margin-top: 1rem; }
+</style>
+</head>
+<body>
+
+    <nav>
+    <div class="logo">&lt;MAKSEN BENKERROU&gt;</div>
+    <div class="nav-right">
+        <button class="theme-toggle" id="theme-btn">☀/☾</button>
+        <a href="index.html">Accueil</a>
+    </div>
+</nav>
+
+    <div class="container">
+        <a href="index.html#projects" class="back-link">← Retour aux projets</a>
+        
+        <h1>Site E-commerce NO-CODE</h1>
+        <p class="subtitle">> Manus IA | Reve.com | Gemini | IA Générative</p>
+
+        <img src="../images/site-e-commerce.png" alt="Aperçu Site E-commerce" class="main-img">
+
+        <div class="detail-card">
+            <h2>Contexte : objectifs et problématique</h2>
+            <p>
+                L'objectif était de concevoir une plateforme e-commerce complète en un temps record en exploitant la puissance des outils d'IA. 
+                Le défi était de passer de l'idée brute à un site fonctionnel et esthétique sans écrire une seule ligne de code traditionnelle (No-Code).
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Rôle : votre contribution</h2>
+            <p>
+                J'ai piloté l'intégralité du workflow créatif et technique :
+                <ul>
+                    <li>Définition de la structure du site via <strong>Manus IA</strong>.</li>
+                    <li>Génération et édition du design via <strong>Reve.com</strong>.</li>
+                    <li>Rédaction des fiches produits et de la stratégie marketing avec <strong>Gemini</strong>.</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Processus : étapes et défis</h2>
+            <p>
+                Le projet a suivi une logique de "Prompt Engineering" :
+                <ol>
+                    <li><strong>Architecture :</strong> Utilisation de l'IA pour générer le sitemap et l'expérience utilisateur (UX).</li>
+                    <li><strong>Design :</strong> Itération sur les visuels pour obtenir une interface moderne et cohérente.</li>
+                    <li><strong>Intégration :</strong> Assemblage des différents modules IA pour créer un tunnel de vente fluide.</li>
+                </ol>
+                <strong>Défi :</strong> Assurer la cohérence visuelle entre les éléments générés par différentes intelligences artificielles.
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Résultats : impacts mesurables</h2>
+            <p>
+                Le résultat est un site e-commerce fictif mais totalement opérationnel en termes de design. 
+                Ce projet démontre ma maîtrise des outils IA modernes pour optimiser la productivité en entreprise.
+            </p>
+        </div>
+    </div>
+
+    <script>
+    const themeBtn = document.getElementById('theme-btn');
+    const htmlElement = document.documentElement;
+
+    // 1. Lire le thème sauvegardé dès l'ouverture de la page
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
+
+    // 2. Permettre de changer le thème aussi depuis cette page
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+</script>
+</body>
+</html>

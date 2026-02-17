@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet COVID-19 - Maksen Benkerrou</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+    /* --- VARIABLES DE COULEURS --- */
+    :root {
+        --bg-color: #f8fafc;
+        --nav-bg: rgba(248, 250, 252, 0.8);
+        --card-bg: rgba(255, 255, 255, 0.8);
+        --text-color: #1e293b;
+        --accent-color: #059669;
+        --border-color: #e2e8f0;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #0f172a;
+        --nav-bg: rgba(15, 23, 42, 0.8);
+        --card-bg: rgba(30, 41, 59, 0.7);
+        --text-color: #e2e8f0;
+        --accent-color: #34d399;
+        --border-color: #334155;
+    }
+
+    /* --- BASE --- */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.7;
+        margin: 0;
+        padding-top: 100px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* --- NAVIGATION --- */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        box-sizing: border-box;
+        transition: background 0.3s ease;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #theme-btn {
+        background: none;
+        border: 1px solid var(--border-color);
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        color: var(--text-color);
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    #theme-btn:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+    .nav-right a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .nav-right a:hover { color: var(--accent-color); }
+
+    /* --- CONTENU --- */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 5% 5rem; }
+    .back-link { color: var(--accent-color); text-decoration: none; font-weight: 600; display: inline-block; margin-bottom: 2rem; }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+    .subtitle { color: var(--accent-color); font-family: monospace; font-size: 1.2rem; margin-bottom: 2rem; }
+    .main-img { width: 100%; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 3rem; }
+    .detail-card { background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 2rem; }
+    .detail-card h2 { margin-top: 0; font-size: 1.4rem; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+    .cta-github, .cta-pdf { display: inline-block; background-color: var(--accent-color); color: #0f172a; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none; margin-top: 1rem; }
+</style>
+</head>
+<body>
+
+    <nav>
+    <div class="logo">&lt;MAKSEN BENKERROU&gt;</div>
+    <div class="nav-right">
+        <button class="theme-toggle" id="theme-btn">☀/☾</button>
+        <a href="index.html">Accueil</a>
+    </div>
+</nav>
+
+    <div class="container">
+        <a href="index.html#projects" class="back-link">← Retour aux projets</a>
+        
+        <h1>Analyse des symptômes COVID-19</h1>
+        <p class="subtitle">> Google Sheets | Analyse de Données | Santé</p>
+
+        <img src="../images/data-analyse.png" alt="Dashboard COVID-19" class="main-img">
+
+        <div class="detail-card">
+            <h2>Contexte : objectifs et problématique</h2>
+            <p>
+                Ce projet analyse des données cliniques réelles pour comprendre comment les symptômes (toux, fièvre, etc.) varient selon le profil des patients. 
+                La problématique centrale était d'identifier les facteurs démographiques les plus corrélés aux diagnostics positifs pour mieux anticiper les besoins hospitaliers.
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Rôle : votre contribution</h2>
+            <p>
+                J'ai agi en tant qu'analyste de données unique sur ce projet. Mes missions comprenaient :
+                <ul>
+                    <li>Le nettoyage d'un dataset brut de données de santé.</li>
+                    <li>La création de formules de calcul pour segmenter les patients.</li>
+                    <li>La conception visuelle du rapport pour rendre les données exploitables.</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Processus : étapes et défis</h2>
+            <p>
+                Le travail a été structuré en trois étapes clés :
+                <ol>
+                    <li><strong>Nettoyage :</strong> Normalisation des données et traitement des valeurs manquantes via Google Sheets.</li>
+                    <li><strong>Analyse :</strong> Utilisation de fonctions complexes comme <code>NB.SI.ENS</code> pour croiser les symptômes avec les tranches d'âge.</li>
+                    <li><strong>Visualisation :</strong> Création de graphiques montrant les disparités géographiques et symptomatiques.</li>
+                </ol>
+                <strong>Défi :</strong> Gérer l'irrégularité des données saisies manuellement pour obtenir des statistiques fiables.
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Résultats : impacts mesurables</h2>
+            <p>
+                L'analyse a permis de démontrer que la tranche d'âge 31-85 ans représentait environ 65% à 70% des cas positifs confirmés dans l'échantillon. 
+                Ces résultats confirment l'importance du ciblage démographique dans les politiques de santé publique.
+            </p>
+            <a href="https://github.com/Maksen94/Analyse-descriptive-des-sympt-mes-et-diagnostics-COVID-19" target="_blank" class="cta-github">Voir le code complet sur GitHub ↗</a>
+        </div>
+    </div>
+
+    <script>
+    const themeBtn = document.getElementById('theme-btn');
+    const htmlElement = document.documentElement;
+
+    // 1. Lire le thème sauvegardé dès l'ouverture de la page
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
+
+    // 2. Permettre de changer le thème aussi depuis cette page
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+</script>
+</body>
+</html>

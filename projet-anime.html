@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Score Anime - Maksen Benkerrou</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+    /* --- VARIABLES DE COULEURS --- */
+    :root {
+        --bg-color: #f8fafc;
+        --nav-bg: rgba(248, 250, 252, 0.8); /* Fond clair en mode jour */
+        --card-bg: rgba(255, 255, 255, 0.8);
+        --text-color: #1e293b;
+        --accent-color: #059669;
+        --border-color: #e2e8f0;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #0f172a;
+        --nav-bg: rgba(15, 23, 42, 0.8); /* Fond sombre en mode nuit */
+        --card-bg: rgba(30, 41, 59, 0.7);
+        --text-color: #e2e8f0;
+        --accent-color: #34d399;
+        --border-color: #334155;
+    }
+
+    /* --- BASE --- */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.7;
+        margin: 0;
+        padding-top: 100px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* --- NAVIGATION --- */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--nav-bg); /* Couleur dynamique */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        box-sizing: border-box;
+        transition: background 0.3s ease;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #theme-btn {
+        background: none;
+        border: 1px solid var(--border-color);
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        color: var(--text-color); /* Change selon le mode */
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    #theme-btn:hover {
+        border-color: var(--accent-color);
+        color: var(--accent-color);
+    }
+
+    .nav-right a {
+        color: var(--text-color); /* Change selon le mode */
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .nav-right a:hover {
+        color: var(--accent-color);
+    }
+
+    /* --- CONTENU --- */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 5% 5rem; }
+    .back-link { color: var(--accent-color); text-decoration: none; font-weight: 600; display: inline-block; margin-bottom: 2rem; }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; }
+    .subtitle { color: var(--accent-color); font-family: monospace; font-size: 1.2rem; margin-bottom: 2rem; }
+    .main-img { width: 100%; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 3rem; }
+    .detail-card { background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 2rem; }
+    .detail-card h2 { margin-top: 0; font-size: 1.4rem; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+    .cta-github { display: inline-block; background-color: var(--accent-color); color: #0f172a; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 700; text-decoration: none; margin-top: 1rem; }
+</style>
+</head>
+
+
+<body>
+
+    <nav>
+    <div class="logo">&lt;MAKSEN BENKERROU&gt;</div>
+    <div class="nav-right">
+        <button class="theme-toggle" id="theme-btn">☀/☾</button>
+        <a href="index.html">Accueil</a>
+    </div>
+</nav>
+
+    <div class="container">
+        <a href="index.html#projects" class="back-link">← Retour aux projets</a>
+        
+        <h1>Score Éditorial Anime</h1>
+        <p class="subtitle">> Python | Pandas | Data Visualization | Algorithme de Scoring</p>
+
+        <img src="../images/graphique.png" alt="Analyse Score Anime" class="main-img">
+
+        <div class="detail-card">
+            <h2>Contexte : objectifs et problématique</h2>
+            <p>
+                L'objectif était d'aider une équipe éditoriale à prioriser la mise en avant des contenus d'un catalogue d'animés. 
+                La problématique consistait à dépasser la simple "note moyenne" pour identifier les œuvres ayant le meilleur équilibre entre popularité, qualité et régularité de production.
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Rôle : votre contribution</h2>
+            <p>
+                En tant que Data Analyst, j'ai conçu l'outil d'aide à la décision :
+                <ul>
+                    <li>Extraction et nettoyage des données de catalogue via <strong>Pandas</strong>.</li>
+                    <li>Développement d'un <strong>score composite propriétaire</strong> (pondération 70% Note / 30% Régularité).</li>
+                    <li>Génération de visualisations pour segmenter les animés par catégories (Chefs-d'œuvre, Valeurs Sûres, Pépites).</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Processus : étapes et défis</h2>
+            <p>
+                Le projet a suivi un pipeline Data classique :
+                <ol>
+                    <li><strong>Data Wrangling :</strong> Nettoyage des formats de dates et gestion des données manquantes sur les épisodes.</li>
+                    <li><strong>Feature Engineering :</strong> Création de nouvelles variables pour mesurer la densité de popularité.</li>
+                    <li><strong>Analyse Graphique :</strong> Utilisation de Matplotlib pour repérer les tendances de notation sur les 10 dernières années.</li>
+                </ol>
+                <strong>Défi :</strong> Normaliser les échelles de notation provenant de différentes sources pour éviter les biais statistiques.
+            </p>
+        </div>
+
+        <div class="detail-card">
+            <h2>Résultats : impacts mesurables</h2>
+            <p>
+                L'algorithme a permis d'isoler 15% du catalogue comme "priorité haute", optimisant ainsi le temps de travail de l'équipe éditoriale. 
+                Ce projet illustre ma capacité à traduire un besoin métier en une solution algorithmique concrète.
+            </p>
+            <a href="https://github.com/Maksen94/projet_animes" target="_blank" class="cta-github">Voir le code sur GitHub ↗</a>
+        </div>
+    </div>
+
+    <script>
+    const themeBtn = document.getElementById('theme-btn');
+    const htmlElement = document.documentElement;
+
+    // 1. Lire le thème sauvegardé dès l'ouverture de la page
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
+
+    // 2. Permettre de changer le thème aussi depuis cette page
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+</script>
+</script>
+</body>
+</html>
